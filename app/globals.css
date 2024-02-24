@@ -2,32 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html,
+body{
+    overflow: hidden;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.tooltip{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    position: relative;
+    transform: translateY(-10px);
+    opacity: 0;
+    transition-duration: 0.2s;
+    transition-property: opacity, transform;
+}
+
+.tooltip::after{
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    top: 90%;
+    left: 50%;
+    transform: rotateZ(45deg) translateX(-50%);
+    z-index: -1;
+}
+
+.hide{
+    opacity: 0;
+}
+
+.show{
+    opacity: 1;
+    transform: translateY(0px);
 }
