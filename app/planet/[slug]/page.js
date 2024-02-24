@@ -84,7 +84,7 @@ export default function Planet({ params }) {
 
   return (
     <>
-      <Link href={"/"} className="absolute top-2 left-2 cursor-pointer">
+      <Link href={"/"} className="absolute top-2 left-2 cursor-pointer outline-none">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -100,7 +100,7 @@ export default function Planet({ params }) {
           />
         </svg>
       </Link>
-      <div className="mt-8 grid max-lg:gap-2 sm:grid-cols-2">
+      <div className="my-8 grid max-lg:gap-2 sm:grid-cols-2">
         <div className="mb-8 lg:w-[36rem] flex justify-center">
           <Image
             src={`/Texture/planetsImages/${slug}.png`}
